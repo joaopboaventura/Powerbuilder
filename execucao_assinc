@@ -1,0 +1,6 @@
+ls_path_txt = gs_diretorio_sistema + "numpags_" + string(Today(), 'yyyymmdd') + string(Now(), 'hhmmss') + ".txt"
+ls_comando = '%comspec% /c ' + gs_diretorio_sistema + 'cpdf -pages "' + as_path_arquivo + '" > "' + ls_path_txt + '"'
+lole_shell = Create OleObject
+lole_shell.connecttonewobject("Wscript.Shell")
+lole_shell.Run(ls_comando, 0, true) // 0 - sem janela / true - para síncrono
+Destroy lole_shell
